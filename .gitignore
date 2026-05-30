@@ -1,0 +1,6 @@
+.DS_Store
+*.bak
+*.backup*.html
+los-unicos-imgs/orig/
+los-unicos-imgs/white/
+los-unicos-imgs/*.py

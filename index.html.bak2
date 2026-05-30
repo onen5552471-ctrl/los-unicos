@@ -1341,154 +1341,13 @@ button.swatch { font: inherit; padding: 0; }
   transition: opacity 0.45s ease;
 }
 .prod:hover .prod__media .prod__back { opacity: 1; }
-
-/* COLLECTION — 3 vertical columns (Tees | Tracksuits | Polos) */
-.collection {
-  padding: clamp(60px, 9vw, 100px) var(--pad-x);
-  max-width: 1600px;
-  margin: 0 auto;
-}
-.collection__head {
-  display: flex;
-  justify-content: space-between;
-  align-items: end;
-  margin-bottom: clamp(28px, 4vw, 48px);
-  padding-bottom: 16px;
-  border-bottom: 1px solid var(--line);
-}
-.collection__title {
-  font-family: var(--font-body);
-  font-size: clamp(18px, 2.4vw, 28px);
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.28em;
-  color: var(--ink);
-}
-.collection__sub {
-  font-size: 11px;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-  text-align: right;
-}
-.collection__grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: clamp(20px, 3vw, 48px);
-}
-@media (max-width: 720px) {
-  .collection__grid { grid-template-columns: 1fr; }
-}
-.collection__column {
-  display: flex;
-  flex-direction: column;
-  gap: clamp(12px, 2vw, 20px);
-}
-.collection__col-head {
-  padding-bottom: 12px;
-  border-bottom: 1px solid var(--line);
-  margin-bottom: 4px;
-}
-.collection__col-title {
-  font-family: var(--font-body);
-  font-size: 12px;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.28em;
-  color: var(--ink);
-}
-.collection__col-count {
-  font-size: 10px;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-  margin-top: 4px;
-}
-.col-prod {
-  display: block;
-  cursor: pointer;
-  transition: opacity 0.3s ease;
-}
-.col-prod:hover { opacity: 0.9; }
-.col-prod__media {
-  aspect-ratio: 4 / 5;
-  background: var(--product-bg);
-  overflow: hidden;
-  position: relative;
-}
-.col-prod__media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/* CAPS — auto-scrolling marquee */
-.caps-row {
-  padding: clamp(60px, 9vw, 100px) 0;
-  border-top: 1px solid var(--line);
-}
-.caps-row__head {
-  max-width: 1600px;
-  margin: 0 auto clamp(28px, 4vw, 48px);
-  padding: 0 var(--pad-x);
-  display: flex;
-  justify-content: space-between;
-  align-items: end;
-  border-bottom: 1px solid var(--line);
-  padding-bottom: 16px;
-}
-.caps-row__title {
-  font-family: var(--font-body);
-  font-size: clamp(18px, 2.4vw, 28px);
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.28em;
-  color: var(--ink);
-}
-.caps-row__sub {
-  font-size: 11px;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-}
-.caps-row__track-wrap {
-  overflow: hidden;
-  mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
-}
-.caps-row__track {
-  display: flex;
-  gap: clamp(12px, 1.5vw, 24px);
-  animation: caps-marquee 35s linear infinite;
-  width: max-content;
-}
-.caps-row:hover .caps-row__track { animation-play-state: paused; }
-.caps-row__item {
-  width: clamp(240px, 26vw, 360px);
-  aspect-ratio: 4 / 5;
-  flex-shrink: 0;
-  overflow: hidden;
-  background: var(--product-bg);
-}
-.caps-row__item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.8s ease; }
-.caps-row__item:hover img { transform: scale(1.04); }
-@keyframes caps-marquee {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
-@media (prefers-reduced-motion: reduce) {
-  .caps-row__track { animation: none; }
-  .caps-row__track-wrap { overflow-x: auto; }
-}
 </style>
 </head>
 <body>
 
 <nav class="nav" id="nav">
   <div class="nav__left">
-    <a href="#cat-tees">Tees</a>
-    <a href="#cat-tracksuits">Tracksuits</a>
-    <a href="#cat-polos">Polos</a>
+    <a href="#shop">Shop</a>
   </div>
   <a href="#top" class="nav__brand">los unicos</a>
   <div class="nav__right">
@@ -1507,61 +1366,76 @@ button.swatch { font: inherit; padding: 0; }
 </section>
 
 
-<section class="collection" id="shop">
-  <div class="collection__head">
-    <div class="collection__title">The Collection</div>
-    <div class="collection__sub">SS26 · Drop 01</div>
-  </div>
-  <div class="collection__grid">
-    <div class="collection__column" id="cat-tees">
-      <div class="collection__col-head">
-        <div class="collection__col-title">Tees</div>
-        <div class="collection__col-count">03 Pieces</div>
-      </div>
-      <a class="col-prod" href="#waitlist"><div class="col-prod__media"><img loading="lazy" src="los-unicos-imgs/web/model_tee_pink.jpg" alt="Signature Tee — Pink" /></div></a>
-      <a class="col-prod" href="#waitlist"><div class="col-prod__media"><img loading="lazy" src="los-unicos-imgs/web/model_tee_white.jpg" alt="Signature Tee — White" /></div></a>
-      <a class="col-prod" href="#waitlist"><div class="col-prod__media"><img loading="lazy" src="los-unicos-imgs/web/model_tee_black.jpg" alt="Signature Tee — Black" /></div></a>
+<section class="shop" id="shop">
+  <div class="shop__group" id="cat-tees">
+    <div class="shop__group-head">
+      <div class="shop__group-title">Tees</div>
+      <div class="shop__group-count">03 Pieces</div>
     </div>
-    <div class="collection__column" id="cat-tracksuits">
-      <div class="collection__col-head">
-        <div class="collection__col-title">Tracksuits</div>
-        <div class="collection__col-count">03 Pieces</div>
-      </div>
-      <a class="col-prod" href="#waitlist"><div class="col-prod__media"><img loading="lazy" src="los-unicos-imgs/web/model_set_green.jpg" alt="Family Tracksuit — Forest Green" /></div></a>
-      <a class="col-prod" href="#waitlist"><div class="col-prod__media"><img loading="lazy" src="los-unicos-imgs/web/set_black.jpg" alt="Family Tracksuit — Black" /></div></a>
-      <a class="col-prod" href="#waitlist"><div class="col-prod__media"><img loading="lazy" src="los-unicos-imgs/web/set_pink.jpg" alt="Family Tracksuit — Pink" /></div></a>
-    </div>
-    <div class="collection__column" id="cat-polos">
-      <div class="collection__col-head">
-        <div class="collection__col-title">Polos</div>
-        <div class="collection__col-count">03 Pieces</div>
-      </div>
-      <a class="col-prod" href="#waitlist"><div class="col-prod__media"><img loading="lazy" src="los-unicos-imgs/web/polo_white.jpg" alt="Court Polo — White" /></div></a>
-      <a class="col-prod" href="#waitlist"><div class="col-prod__media"><img loading="lazy" src="los-unicos-imgs/web/polo_mauve.jpg" alt="Court Polo — Mauve" /></div></a>
-      <a class="col-prod" href="#waitlist"><div class="col-prod__media"><img loading="lazy" src="los-unicos-imgs/web/polo_black.jpg" alt="Court Polo — Black" /></div></a>
+    <div class="shop__grid">
+      <a class="prod" href="#waitlist">
+        <div class="prod__media"><img loading="lazy" src="los-unicos-imgs/web/model_tee_pink.jpg" alt="Signature Tee — Pink front" /><img class="prod__back" loading="lazy" src="los-unicos-imgs/web/tee_pink_back.jpg" alt="Signature Tee — Pink back" /></div>
+      </a>
+      <a class="prod" href="#waitlist">
+        <div class="prod__media"><img loading="lazy" src="los-unicos-imgs/web/model_tee_white.jpg" alt="Signature Tee — White front" /><img class="prod__back" loading="lazy" src="los-unicos-imgs/web/tee_white_back.jpg" alt="Signature Tee — White back" /></div>
+      </a>
+      <a class="prod" href="#waitlist">
+        <div class="prod__media"><img loading="lazy" src="los-unicos-imgs/web/model_tee_black.jpg" alt="Signature Tee — Black front" /><img class="prod__back" loading="lazy" src="los-unicos-imgs/web/tee_black_back.jpg" alt="Signature Tee — Black back" /></div>
+      </a>
     </div>
   </div>
-</section>
 
-<section class="caps-row" id="cat-caps">
-  <div class="caps-row__head">
-    <div class="caps-row__title">The Caps</div>
-    <div class="caps-row__sub">03 Colorways · SS26</div>
+  <div class="shop__group" id="cat-tracksuits">
+    <div class="shop__group-head">
+      <div class="shop__group-title">Tracksuits</div>
+      <div class="shop__group-count">03 Pieces</div>
+    </div>
+    <div class="shop__grid">
+      <a class="prod" href="#waitlist">
+        <div class="prod__media"><img loading="lazy" src="los-unicos-imgs/web/model_set_green.jpg" alt="Family Tracksuit — green on model" /></div>
+      </a>
+      <a class="prod" href="#waitlist">
+        <div class="prod__media"><img loading="lazy" src="los-unicos-imgs/web/set_black.jpg" alt="Family Tracksuit — black" /></div>
+      </a>
+      <a class="prod" href="#waitlist">
+        <div class="prod__media"><img loading="lazy" src="los-unicos-imgs/web/set_pink.jpg" alt="Family Tracksuit — pink" /></div>
+      </a>
+    </div>
   </div>
-  <div class="caps-row__track-wrap">
-    <div class="caps-row__track">
-      <div class="caps-row__item"><img loading="lazy" src="los-unicos-imgs/web/cap_black_green.jpg" alt="Trucker Cap — Black / Green" /></div>
-      <div class="caps-row__item"><img loading="lazy" src="los-unicos-imgs/web/cap_green_green.jpg" alt="Trucker Cap — Green / Green" /></div>
-      <div class="caps-row__item"><img loading="lazy" src="los-unicos-imgs/web/cap_green_pink.jpg" alt="Trucker Cap — Green / Pink" /></div>
-      <div class="caps-row__item"><img loading="lazy" src="los-unicos-imgs/web/cap_black_green.jpg" alt="Trucker Cap — Black / Green" /></div>
-      <div class="caps-row__item"><img loading="lazy" src="los-unicos-imgs/web/cap_green_green.jpg" alt="Trucker Cap — Green / Green" /></div>
-      <div class="caps-row__item"><img loading="lazy" src="los-unicos-imgs/web/cap_green_pink.jpg" alt="Trucker Cap — Green / Pink" /></div>
-      <div class="caps-row__item"><img loading="lazy" src="los-unicos-imgs/web/cap_black_green.jpg" alt="Trucker Cap — Black / Green" /></div>
-      <div class="caps-row__item"><img loading="lazy" src="los-unicos-imgs/web/cap_green_green.jpg" alt="Trucker Cap — Green / Green" /></div>
-      <div class="caps-row__item"><img loading="lazy" src="los-unicos-imgs/web/cap_green_pink.jpg" alt="Trucker Cap — Green / Pink" /></div>
-      <div class="caps-row__item"><img loading="lazy" src="los-unicos-imgs/web/cap_black_green.jpg" alt="Trucker Cap — Black / Green" /></div>
-      <div class="caps-row__item"><img loading="lazy" src="los-unicos-imgs/web/cap_green_green.jpg" alt="Trucker Cap — Green / Green" /></div>
-      <div class="caps-row__item"><img loading="lazy" src="los-unicos-imgs/web/cap_green_pink.jpg" alt="Trucker Cap — Green / Pink" /></div>
+
+  <div class="shop__group" id="cat-caps">
+    <div class="shop__group-head">
+      <div class="shop__group-title">Caps</div>
+      <div class="shop__group-count">03 Pieces</div>
+    </div>
+    <div class="shop__grid">
+      <a class="prod" href="#waitlist">
+        <div class="prod__media"><img loading="lazy" src="los-unicos-imgs/web/cap_black_green.jpg" alt="Trucker Cap — Black / Green Print" /></div>
+      </a>
+      <a class="prod" href="#waitlist">
+        <div class="prod__media"><img loading="lazy" src="los-unicos-imgs/web/cap_green_green.jpg" alt="Trucker Cap — Green Brim / Green Print" /></div>
+      </a>
+      <a class="prod" href="#waitlist">
+        <div class="prod__media"><img loading="lazy" src="los-unicos-imgs/web/cap_green_pink.jpg" alt="Trucker Cap — Green Brim / Pink Print" /></div>
+      </a>
+    </div>
+  </div>
+
+  <div class="shop__group" id="cat-polos">
+    <div class="shop__group-head">
+      <div class="shop__group-title">Polos</div>
+      <div class="shop__group-count">03 Pieces</div>
+    </div>
+    <div class="shop__grid">
+      <a class="prod" href="#waitlist">
+        <div class="prod__media"><img loading="lazy" src="los-unicos-imgs/web/polo_white.jpg" alt="Court Polo Set — White / Teal Print" /></div>
+      </a>
+      <a class="prod" href="#waitlist">
+        <div class="prod__media"><img loading="lazy" src="los-unicos-imgs/web/polo_mauve.jpg" alt="Court Polo Set — Mauve / White Print" /></div>
+      </a>
+      <a class="prod" href="#waitlist">
+        <div class="prod__media"><img loading="lazy" src="los-unicos-imgs/web/polo_black.jpg" alt="Court Polo Set — Black / Pink Print" /></div>
+      </a>
     </div>
   </div>
 </section>

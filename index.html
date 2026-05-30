@@ -1345,7 +1345,7 @@ button.swatch { font: inherit; padding: 0; }
 /* COLLECTION — 3 vertical columns (Tees | Tracksuits | Polos) */
 .collection {
   padding: clamp(60px, 9vw, 100px) var(--pad-x);
-  max-width: 1600px;
+  max-width: 900px;
   margin: 0 auto;
 }
 .collection__head {
@@ -1410,6 +1410,11 @@ button.swatch { font: inherit; padding: 0; }
   transition: opacity 0.3s ease;
 }
 .col-prod:hover { opacity: 0.9; }
+.col-prod {
+  max-width: 240px;
+  width: 100%;
+  align-self: center;
+}
 .col-prod__media {
   aspect-ratio: 4 / 5;
   background: var(--product-bg);
